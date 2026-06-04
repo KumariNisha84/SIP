@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Model</title>
+    <style>
+        button{
+            padding: 20px;
+        }
+
+        .box{
+            border: 1px solid black;
+            border-radius: 10px;
+            height: 200px;
+        }
+
+        .submit1{
+            /* margin: 20px; */
+            margin:40px 300px 40px 50px;
+            border: 2px solid rebeccapurple;
+            border-radius: 15px;
+            
+        }
+        .submit1:hover{
+            background-color: aquamarine;
+        }
+        input:focus{
+            border: 5px solid burlywood;
+        }
+        label{
+            margin-left: 10px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1>CSS Box Model</h1>
+    <!-- <button>Submit</button> -->
+
+    <div class="box">
+        <button class="submit1">Submit1</button>
+        <button class="submit2">Submit2</button>
+<br>
+        <label for="">Name:</label>
+        <input type="text">
+    </div>
+
+ 
+</body>
+</html>

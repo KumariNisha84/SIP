@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+
+    <style>
+      li:first-child{
+            color: brown;
+        }
+        li:last-child{
+            color: rgb(19, 173, 173);
+        }
+
+         div p {color: blueviolet;} /*Descendent Selector */
+
+          div >p{color:green}    /*Child Selector */
+
+
+          h1 + p{color: rgb(102, 141, 105);} /*Adjacent Sibling(+)(target only next sibling #colour green to 1st p only)*/
+
+          h1~p{color: rgb(240, 24, 186);}  /*General Sibling(Will colour all sibling elements)*/
+    
+
+
+       h3,h4{ /*Multipe Selector*/
+        font-family: Arial;
+        font-style: italic;
+       }
+    p.text{  /*Combined Selector*/
+        color: rgb(50, 7, 90);
+    }
+
+    li:nth-child(3){color:blue;} /*nth child selector*/
+
+    li:nth-child(even){color: rgb(241, 9, 9);}   /*even/odd selector*/
+    </style>
+</head>
+<body>
+
+     <!-- <h2>Unordered List</h2>
+    <ul>
+        
+        <li id="a">HTML</li>
+        <li id="b">CSS</li>
+        <li id="c">JavaScript</li>
+        <li id="d">React</li>
+    </ul>-->
+<!--Descendent & Child Selector-->
+    <div>
+        <p>Direct Child(Blue & Green)</p>
+        <section>
+            <p>Nested Child (Blue only)</p>
+        </section>
+    </div>
+<!--Sibling Selectors-->
+    <h1>Heading</h1>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+
+    <!--Multiple Selectors-->
+    <h3>Hello</h3>
+    <h4>Everyone!!</h4>
+    <p class="text">We Welcome You All</p>
+    <p class="text">How are you?</p>
+  
+     <h2>Unordered List</h2>
+    <ul>
+        
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>NodeJs</li>
+        <li>Express</li>
+        <li>Python</li>
+    </ul>
+
+</body>
+</html>
