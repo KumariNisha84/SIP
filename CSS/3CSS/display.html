@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+        button{
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: rgb(255, 191, 191);
+        }
+        button:hover{
+            background-color: brown;
+            box-shadow: 5px 5px 10px #5a5858;
+
+        }
+        div{
+            border: 1px solid black ;
+            margin-left: 20px;
+            margin-top: 50px;
+            display: inline;
+            padding: 10px 20px;
+        }
+        li{
+            display: inline-block;
+            width: 30px;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+
+        p{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Display Properties</h2>
+    <!--Display: block-->
+    <button>Step 1</button>
+    <button>Step 2</button>
+    <button>Step 3</button>
+<br>
+    <!--display:inline--> <!--cannot apply height & width-->
+    <div>Div1</div>
+    <div>Div2</div>
+    <div>Div3</div>
+<br>
+    <!--display:inline-block-->  <!--can change height & width-->
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+<hr>
+    <!--display:none-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, placeat provident, accusantium laudantium numquam maxime natus magni amet itaque aspernatur molestiae cupiditate quasi quidem eligendi distinctio fugit sequi? Voluptatem consectetur nulla cumque fugit inventore et enim velit eligendi adipisci ipsa?</p>
+</body>
+</html>

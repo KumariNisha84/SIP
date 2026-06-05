@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        div{
+            border: 1px solid black;
+            margin: 12px;
+            height: 50px;
+            width: 100px;
+            padding: 10px;
+          
+        }
+        .abs{
+            position: absolute;
+            top: 20px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Hello Buddy
+    </div>
+    
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+                <div>Hello</div>
+                <div class="abs">Hi</div>
+                <div>Bye!!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
