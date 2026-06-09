@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Visualization</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-areas: " sidebar nav nav2"
+                                "sidebar main-content side-content"
+                                "footer footer footer";
+            gap: 10px;            
+        }
+        .item{
+            border: 1px solid black;
+            /* height: 100px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item1{
+            background-color: yellow;
+            grid-area: nav;
+            height:100px;
+            width: 200px;
+        }
+        .item2{
+            background-color: white;
+            grid-area: nav2;
+            width: 100px;
+            height: 100px;
+        }
+        .item3{
+            background-color: purple;
+            grid-area: sidebar;
+            height: 350px;
+            display: flex;
+            
+            width: 200px;
+        }
+        .item4{
+            background-color: red;
+            grid-area: main-content;
+           height: 236px;
+           width: 200px;
+        }
+        .item5{
+            background-color: orangered;
+            grid-area: side-content;
+            width: 100px;
+            height: 236px;
+        }
+        .item6{
+           
+             background-color: rgb(149, 233, 22);
+            grid-area: footer;
+            height:100px;
+           
+        }
+        .main{
+          display: flex;
+          border: 1px solid black;
+          justify-content: center;
+          padding: 30px;
+          width: 700px;
+        }
+        .main h1{
+           margin-left: 150px;
+        }
+
+        @media (max-width: 768px){
+            .container{
+                grid-template-areas: "nav"
+                "nav2"
+                "sidebar"
+                "main-content"
+                "side-content"
+                "footer";
+            }
+        } 
+    </style>
+</head>
+<body>
+   <div class="main">
+    <div class="container">
+        <div class="item item1">Box 1</div>
+        <div class="item item2">Box 2</div>
+        <div class="item item3">Box 3</div>
+         <div class="item item4">Box 4</div>
+         <div class="item item5">Box 5</div>
+        <div class="item  item6">Box 6</div>
+        
+    </div>
+    </div>
+</body>
+</html>

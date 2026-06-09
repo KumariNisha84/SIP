@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            /* grid-template-columns: 200px 200px; (divide grid in columns) */
+            /* grid-template-columns: 1fr 1fr 1fr; (divide in the fraction*/
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            height: 500px;
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-rows: repeat(3,1fr); /* (Avoid writing multiple times)
+            /* grid-template-columns: minmax(); */
+            gap: 100px;
+        }
+        .item{
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #item5{
+            grid-area: 2/3;   /*row/column*/
+        }
+        #item4{
+            grid-area: 2/2;
+        }
+        #item2{
+            grid-area: 3/1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="item">Box 1</div>
+    <div class="item" id="item2">Box 2</div>
+    <div class="item">Box 3</div>
+    <div class="item" id="item4">Box 4</div>
+    <div class="item" id="item5">Box 5</div>
+    </div>
+</body>
+</html>
