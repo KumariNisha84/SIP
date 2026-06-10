@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 200px;
+            border-radius: 200px;
+            border: 5px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-bottom-color:transparent;
+            animation: moveBox 1.5s ease-in-out infinite;
+        }
+
+        @keyframes moveBox{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 550px;
+        }
+        *{
+            background-color: black;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">Loading...</div>
+    </div>
+</body>
+</html>

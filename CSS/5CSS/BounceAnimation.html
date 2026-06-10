@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOUNCE_ANIMATION</title>
+    <style>
+    .container{
+            /* align-items: center; */
+            display: flex;
+            justify-content: center;
+            /* text-align: center; */
+            height: 100vh;
+        }
+        .box{
+            display: flex;
+            border: 7px solid black;
+            height: 200px;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 200px;
+            margin: 30px;
+            color: black;
+            animation: moveBox 2s ease-in-out infinite;
+        }
+        @keyframes moveBox{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(50px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+</head>
+<body>
+     <div class="container">
+        <div class="box">
+            HELLO!👋
+        </div>
+     </div>
+</body>
+</html>

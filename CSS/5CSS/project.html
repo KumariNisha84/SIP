@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            gap: 30px;
+            border: 1px solid;
+        }
+        
+        .item{
+            /* border: 1px solid; */
+            height: 100px;
+            width: 100%; 
+           transition-duration: 5s;
+        }
+         
+        
+        .item2 img ,.item3 img,.item1 img,.item4 img,.item5 img,.item6 img{
+            height: 80px;
+            width: 120px;
+        }
+        .container:hover .item1{
+            transform: translateX(1530px);
+           
+        transition-timing-function: ease ;
+        }
+        .container:hover .item2{
+            transform: translateX(1530px); 
+        transition-timing-function: ease-in ;
+        }
+        .container:hover .item3{
+            transform: translateX(1530px); 
+            transition-timing-function:ease-out;
+        }
+        .container:hover .item4{
+            transform: translateX(1530px);
+            transition-timing-function:  ease-in-out ;
+        }
+        .container:hover .item5{
+            transform: translateX(1530px);
+            transition-timing-function: linear ;
+        }
+         .container:hover .item6{
+            transform: translateX(1530px);
+           transition-timing-function: steps(5);
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <div class="item item1"> <img src="./car2.jfif" alt=""></div>
+        <div class="item item2"> <img src="./car2.jfif" alt=""></div>
+        <div class="item item3"> <img src="./car2.jfif" alt=""></div>
+        <div class="item item4"><img src="./car2.jfif" alt=""></div>
+        <div class="item item5"><img src="./car2.jfif" alt=""></div>
+         <div class="item item6"><img src="./car2.jfif" alt=""></div>
+    </div>
+  
+</body>
+</html>

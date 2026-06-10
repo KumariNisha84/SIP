@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform - CSS</title>
+    <style>
+        .container{
+            display: grid;
+            gap: 10px;
+        }
+        .item{
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item1:hover{
+            transform: translateX(500px);
+            /* transition-property: translateX(500px); */
+            transition-duration: 5s; /*kitna time lekr jayega*/
+            transition-timing-function: ease-in-out ;
+            /* transition-timing-function: linear; */
+            transition-delay: 3s;
+            background-color: lightsalmon;
+        
+        }
+        .item2:hover{
+            transform: translateY(100px);
+            background-color: pink;
+        }
+        .item3:hover{
+            /* transform: scale(1.5); */
+            /* transform: scaleX(1.5); */
+            transform: scaleY(1.2);
+            background-color: palevioletred;
+        }
+        .item4:hover{
+            /* transform: rotate(80deg); */
+            transform: rotateX(50deg);
+            background-color: lightcyan;
+        }
+        .item5:hover{
+            transform: translate(100px)
+                     scale(1.2)
+                     rotate(45deg);
+                     background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Box 1</div>
+        <div class="item item2">Box 2</div>
+        <div class="item item3">Box 3</div>
+        <div class="item item4">Box 4</div>
+        <div class="item item5">Box 5</div>
+    </div>
+</body>
+</html>
