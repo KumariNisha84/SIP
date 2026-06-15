@@ -11,14 +11,14 @@ body{
     margin: 100px 20px 100px 25px;
 }
 .div3:hover{
-    transform: translateY(-15px);
+    transform: translateY(-14px);
 }
 
 .div2:hover{
-    transform: translateY(-15px);
+    transform: translateY(-14px);
 }
 .div1:hover{
-    transform: translateY(-15px);
+    transform: translateY(-14px);
 }
 
 img{
