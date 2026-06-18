@@ -1,4 +1,4 @@
-
+// questions solved on Promises
 // function login (email, password){
 //     return new Promise((res, rej) =>{
 //         console.log("We are verifying your credentials!!!!!")
@@ -47,27 +47,27 @@
 
 
 //question - 2
-// function processPayment(amount) {
-//     return new Promise((res, rej) =>{
+function processPayment(amount) {
+    return new Promise((res, rej) =>{
         
-//         if(amount > 0){
-//             res("Payment succeeds");
-//         }else{
-//             rej("Payment Declined")
-//         }
-//     })
-// }
-// processPayment(1000)
-// .then((res) =>{
-//     console.log(res);
-// })
-// .catch((err) => {
-//     console.log(err);
-// });
+        if(amount > 0){
+            res("Payment succeeds");
+        }else{
+            rej("Payment Declined")
+        }
+    })
+}
+processPayment(1000)
+.then((res) =>{
+    console.log(res);
+})
+.catch((err) => {
+    console.log(err);
+});
 
 
 //question -3
-function processPayment(balance){
+function processPayment1(balance){
     return new Promise((resolve, reject) => {
         if(balance >= 500){
             resolve("Payment successful");
@@ -76,7 +76,7 @@ function processPayment(balance){
         }
     })
 }
-processPayment(100)
+processPayment1(100)
 .then((res) => {
     console.log(res);
 })
