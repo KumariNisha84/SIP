@@ -72,7 +72,7 @@ function processPayment1(balance){
         if(balance >= 500){
             resolve("Payment successful");
         }else{
-            reject("Insufficient balance");
+            reject("Insufficient balance in your account");
         }
     })
 }

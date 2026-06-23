@@ -61,15 +61,15 @@ return new Promise((res, rej) =>{
     console.log("Connect ho raha hai db se");
     console.log("Khushboo !! Thora wait kr..")
     setTimeout(()=>{
-        console.log("Connect ho gaya ✔");
+        console.log("Connect ho gaya");
         res()
     }, 2000);
 })
 }
 connection()
 .then(()=>{
-    console.log("Promise fullfilled ho gyi");
+    console.log("Promise fullfill ho gyi");
 })
 .catch(() => {
-    console.log("Promise reject ho gyi...");
+    console.log("Promise is rejected");
 });
