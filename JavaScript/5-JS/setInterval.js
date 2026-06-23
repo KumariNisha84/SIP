@@ -33,7 +33,7 @@
 let count = 1
 const timer = setInterval(()=>{
     
-    console.log(2 * count);
+    console.log(3 * count);
     count++;
     if(count >=11){
         clearInterval(timer);
