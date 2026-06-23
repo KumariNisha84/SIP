@@ -1,23 +1,23 @@
 //Promises
 //Creating a Promise
-const orderFood = new Promise((res, rej) => //first value will be always fulfilled and the second will be reject one (the names can be different)
-    {
-        const delivered = false;
-        if(delivered){
-            res("Food Delivered");
-        }else{
-            rej("Order Cancelled");
-        }
-});
+// const orderFood = new Promise((res, rej) => //first value will be always fulfilled and the second will be reject one (the names can be different)
+//     {
+//         const delivered = false;
+//         if(delivered){
+//             res("Food Delivered");
+//         }else{
+//             rej("Order Cancelled");
+//         }
+// });
 
 //Consuming (calling) a Promise
-orderFood
-.then((resolve)=> { //.then() - Handles the resolve condition only
-console.log(resolve);
-})
-.catch((error) =>{ //.catch() - Handles the reject condition only
-    console.log(error);
-});
+// orderFood
+// .then((resolve)=> { //.then() - Handles the resolve condition only
+// console.log(resolve);
+// })
+// .catch((error) =>{ //.catch() - Handles the reject condition only
+//     console.log(error);
+// });
 
 //Example-2
 //1st Way
@@ -68,7 +68,7 @@ return new Promise((res, rej) =>{
 }
 connection()
 .then(()=>{
-    console.log("Promise fullfilled ho gaya");
+    console.log("Promise fullfilled ho gyi");
 })
 .catch(() => {
     console.log("Promise reject ho gyi...");

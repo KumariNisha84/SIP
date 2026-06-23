@@ -34,4 +34,4 @@ function paymentProcessing(amount, msg){
 paymentProcessing(15000, paymentSuccess);
 
 
-//Example-4
+//Multiple of callback create (pyramid doom) structure which decreases the readibility of the code so we use PROMISE to solve the problem of callback hell. 
