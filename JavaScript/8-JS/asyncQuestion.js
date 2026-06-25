@@ -140,6 +140,7 @@ function payment (){
     })
 }
 
+
 async function ride(){
     try{
         
