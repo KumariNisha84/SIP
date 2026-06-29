@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Hello Everyone!</h1>
+    </div>
+
+    <div class="city">
+            <p>We are here in SAGE University, Indore.</p>
+        </div>
+
+
+    <ul>
+        <li>item1</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+
+    <script>
+        // const ids = document.getElementById("container");
+        // console.log(ids);
+
+        // const cl = document.getElementsByClassName("city");
+        // console.log(cl);
+
+        // const tag = document.getElementsByTagName("h1");
+        // console.log(tag);
+
+        // const ids = document.querySelector('#container'); //for selection class using querySelector
+        // console.log(ids);
+        // ids.style.color = "brown"
+
+
+//another method to apply style
+document.querySelector('#container').style.color = "brown"
+
+        const cont = document.querySelector('.city');
+        console.log(cont);
+
+        const uls = document.querySelectorAll('li');
+        uls.forEach(element =>{
+            console.log(element)
+            element.style.color = "red"
+            element.style.backgroundColor = "yellow"
+            element.style.listStyle = "none"
+            // element.style.fontSize = "30px"
+        });
+
+    </script>
+</body>
+</html>
