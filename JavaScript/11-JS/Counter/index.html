@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(235, 202, 160);
+        }
+        .box{
+            display: flex;
+            gap: 10px;
+        }
+        .container {
+            border: 5px solid rgb(192, 74, 94);
+            height: 100px;
+            width: 200px;
+            display:grid;
+            justify-content: center;
+            border-radius: 15px;
+            align-items: center;
+            background-color: bisque;
+        }
+        .A{
+             display:grid;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            border-radius: 15px;
+        }
+        .inc, .dec{
+            border-radius: 8px;
+        }
+        .inc{
+            background-color: green;
+        }
+        .dec{
+            background-color: red;
+        }
+        .inc:hover{
+            transform: translateY(-5px);
+        }
+         .dec:hover{
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="A">
+    <div class="container">
+    <div class="box">
+        <button class="inc">Increase</button>
+        <h3>0</h3>
+        <button class="dec">Decrease</button>
+
+    </div>
+</div>
+
+</div>
+
+    <script>
+        const inc = document.querySelector('.inc');
+        const cnt = document.querySelector('h3');
+        console.log(inc);
+
+
+        inc.addEventListener('click', ()=>{
+            // console.log("clicked");
+            cnt.innerHTML = Number(cnt.innerHTML) + 1
+            // console.log(cnt.innerText)
+        })
+
+         const dec = document.querySelector('.dec');
+         dec.addEventListener('click', ()=>{
+            if(cnt.innerHTML > 0){
+         cnt.innerHTML = Number(cnt.innerHTML) - 1
+            }
+        })
+    </script>
+
+    
+</body>
+</html>

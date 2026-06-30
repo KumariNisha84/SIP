@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+ <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.inp{
+    width: 350px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.inp:focus{
+    border-color: #2575fc;
+}
+
+.btn{
+    padding: 12px 20px;
+    border: none;
+    background: #2575fc;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #0d5be1;
+}
+
+.taskList{
+    width: 450px;
+    margin-top: 30px;
+}
+
+.taskName{
+    list-style: none;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    word-break: break-word;
+}
+
+.btnGroups{
+    display: flex;
+    gap: 8px;
+}
+
+.btnGroups button{
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.up{
+    background: #28a745;
+    color: white;
+}
+
+.up:hover{
+    background: #218838;
+}
+
+.down{
+    background: #ffc107;
+    color: black;
+}
+
+.down:hover{
+    background: #e0a800;
+}
+
+.del{
+    background: #dc3545;
+    color: white;
+}
+
+.del:hover{
+    background: #b52a37;
+}
+ </style>
+</head>
+<body>
+
+    <input class="inp" type="text" placeholder="Enter Your Task" >
+    <button class="btn">ADD</button>
+
+<ul class="taskList">
+   
+</ul>
+
+
+    <script>
+        const inp = document.querySelector('.inp')
+        // console.log(inp);
+        const btn = document.querySelector('.btn');
+        const taskList = document.querySelector('.taskList');
+
+        btn.addEventListener('click', ()=> {
+            console.log(inp.value);
+            let task = inp.value;
+            let li = document.createElement('li');
+
+            li.classList.add('taskName');
+
+            li.innerHTML = `${task}
+           <span class ="btnGroups">
+            <button class="up">Up ⬆</button> 
+            <button class="down">Down ⬇</button>
+            <button class="del">Del ❌</button>
+            </span>`
+        li.style.listStyle = "none"
+        taskList.appendChild(li);
+        inp.value = ""
+        });
+    </script>
+</body>
+</html>
