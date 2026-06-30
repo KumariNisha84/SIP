@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+</head>
+<body>
+    <h2>Background Changer</h2>
+    <div class="btn">
+        <button class="brown">Brown</button>
+        <button class="blue">lightblue</button>
+        <button class="green">green</button>
+    </div>
+
+    <script>
+
+        const brown = document.querySelector('.brown');
+        const blue = document.querySelector('.blue');
+        const green = document.querySelector('.green');
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click',(ev)=>{
+            let data = ev.target;
+            if(data.classList.contains('brown')){
+                // console.log(data);
+                localStorage.setItem("savedColor", 'brown')
+                document.body.style.backgroundColor = 'brown'
+            }
+            else if (data.classList.contains('blue')){
+                localStorage.setItem("savedColor", 'lightblue')
+                document.body.style.backgroundColor = 'lightblue'
+            }else if (data.classList.contains('green')){
+                localStorage.setItem("savedColor", 'green')
+                document.body.style.backgroundColor = 'green'
+            }
+        })
+
+        let previousColor = localStorage.getItem('savedColor');
+        if(previousColor){
+            document.body.style.backgroundColor = previousColor;
+        }
+    </script>
+</body>
+</html>
