@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project World</title>
     <style>
-        /* .container{
-            border: 1px solid blue;
-            
-        } */
+
+        .container { border: 2px solid #333; padding: 50px; width: 400px; height: 150px; border-radius: 10px;
+             margin: 40px 0 30px 0 ; }
+        
         .a , .b , .c, .d{
             display: flex;
             margin-bottom: 8px;
@@ -56,11 +57,17 @@
             font-weight: bold;
             font-family: 'Times New Roman', Times, serif;
         }
+    
     </style>
 </head>
+
 <body>
-    <h1>PROJECT WORLD </h1>
-<div class="container">
+    <div class="container">
+        <h1>PROJECT WORLD </h1>
+        <h3 id="welcomeMessage"></h3>
+        <button onclick="logout()">Logout</button>
+    </div>
+
     <div class="a">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWPDf_LR8dKCPPAewlX0JXGjtffTbSiGI9BL-kA5Zrkg&s=10" alt="" style="height: 200px; width: 300px;">
         <div class="ab">
@@ -92,21 +99,25 @@
        
     </div>
    </div>
-   </div>
 
 
-   <script>
-    const activeUser = JSON.parse(localStorage.getItem('activeUser'));
-    if(!activeUser){
-        window.location.href = "welcome.html";
-    }else{
+    <script>
+        // Check if a user is currently logged in
+        const activeUser = JSON.parse(localStorage.getItem('activeUser'));
+        
+        if (!activeUser) {
+            // If no active user, kick them back to the home page
+            window.location.href = "welcome.html";
+        } else {
+            // Display their registered name
+            document.getElementById('welcomeMessage').innerText = "Welcome to the dashboard, " + activeUser.name + "!";
+        }
 
-    }
-
-    function logout (){
-        localStorage.removeItem('activeUser');
-        window.location.href = "welcome.html";
-    }
-   </script>
+        // Logout function
+        function logout() {
+            localStorage.removeItem('activeUser'); // Clear session
+            window.location.href = "welcome.html";   // Go back to home
+        }
+    </script>
 </body>
 </html>

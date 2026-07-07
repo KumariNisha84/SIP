@@ -3,63 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; }
+        .container { border: 2px solid #333; padding: 20px; width: 300px; border-radius: 10px; border-bottom-right-radius: 40px; /* Matching drawing shape */ }
+    </style>
 </head>
 <body>
-    <h1>Registration Form</h1>
-    <p>Get yourself Register</p>
-
-    <form id="registerForm">
-        <label for="name">Name</label>
-        <input type="text" placeholder="Full Name" id="name" required>
-        <br><br>
-              
-        <label for="phone">Mobile No</label>
-        <input type="tel" placeholder="Mobile number" id="phone" required>
- <br><br>
-        <label for="mail">Email</label>
-        <input type="email" placeholder="Email ID" id="email" required>
- <br><br>
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="pass" required>
- <br><br>
-           <label for="password">Confirm Password</label>
-        <input type="password" placeholder="Confirm Password" id="pass" required>
- <br><br>
-        <button><a href="login.html">Register</a></button>
-    </form>
-
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="regForm">
+            <label>Name:</label><br>
+            <input type="text" id="regName" required><br><br>
+            
+            <label>Phone No:</label><br>
+            <input type="tel" id="regPhone" required><br><br>
+            
+            <label>Email id:</label><br>
+            <input type="email" id="regEmail" required><br><br>
+            
+            <label>Password:</label><br>
+            <input type="password" id="regPassword" required><br><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
 
     <script>
-       document.getElementById('registerForm').addEventListener('submit', function (e){
-              e.preventDefault();
-
-       const name = document.getElementById('name').value;
-       const phone = document.getElementById('phone').value;
-       const email = document.getElementById('email').value;
-       const password = document.getElementById('pass').value;
-
-       let users = JSON.parse(localStorage.getItem('users')) || [];
-
-       if(users.some(user => user.email === email)){
-              alert("The email is already registered");
-              return;
-       }
-
-
-      // Create user object and push to array
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const name = document.getElementById('regName').value;
+            const phone = document.getElementById('regPhone').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            // Get existing users or create an empty array
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            // Check if email already exists to prevent duplicates
+            if(users.some(user => user.email === email)) {
+                alert("This email is already registered! Please Sign In.");
+                return;
+            }
+            
+            // Create user object and push to array
             const newUser = { name, phone, email, password };
             users.push(newUser);
-
+            
             // Save updated array to local storage
             localStorage.setItem('users', JSON.stringify(users));
-
+            
             // Auto-login the new user and redirect to Project World
             localStorage.setItem('activeUser', JSON.stringify(newUser));
             alert("Registration successful!");
             window.location.href = "project.html";
         });
-
-  </script>
+    </script>
 </body>
 </html>

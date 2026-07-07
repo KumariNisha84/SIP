@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 50px; }
+        .container { border: 2px solid #333; padding: 20px; width: 300px; border-radius: 10px; }
+        .error-msg { color: red; font-weight: bold; margin-top: 10px; }
+    </style>
 </head>
 <body>
-    <div>
-         <div>
-    <h1>Login Form</h1>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form id="loginForm">
+            <label>Email:</label><br>
+            <input type="email" id="loginEmail" required><br><br>
+            
+            <label>Password:</label><br>
+            <input type="password" id="loginPassword" required><br><br>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p id="message" class="error-msg"></p>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
 
-    <form id="loginForm">
-
-        <label for="email">Email</label>
-        <input type="email" placeholder="Email" id="email" required>
-        <br><br>
-        <label for="password">Password</label>
-        <input type="password"  placeholder="Password" id="password" required>
-        <br><br>
-
-
-        <button> <a href="project.html">Login</a></button>
-    </form>
-    <p id="message"></p>
-    <p><a href="welcome.html">Back to Home</a></p>    
-</div>
-</div>
-        <script>
-        document.getElementById('loginForm').addEventListener('submit', function (e) {
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent page reload
-
-            const emailInput = document.getElementById('email').value;
-            const passwordInput = document.getElementById('password').value;
+            
+            const emailInput = document.getElementById('loginEmail').value;
+            const passwordInput = document.getElementById('loginPassword').value;
             const messageBox = document.getElementById('message');
-
+            
             // Retrieve users from local storage
             let users = JSON.parse(localStorage.getItem('users')) || [];
-
+            
             // Find if email exists in database
             let foundUser = users.find(user => user.email === emailInput);
-
+            
             if (!foundUser) {
                 // Email is not found in the array at all
                 messageBox.innerHTML = "Wrong email address. Both might be wrong or missing. <a href='register.html'>Please register here.</a>";
@@ -50,7 +50,7 @@
                 // Both match successfully
                 messageBox.style.color = "green";
                 messageBox.innerText = "Login Successful! Redirecting...";
-
+                
                 // Store active session and redirect
                 localStorage.setItem('activeUser', JSON.stringify(foundUser));
                 setTimeout(() => {
@@ -58,7 +58,6 @@
                 }, 1000);
             }
         });
-   
     </script>
 </body>
 </html>
