@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <p>Get yourself Register</p>
+
+    <form id="registerForm">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Full Name" id="name" required>
+        <br><br>
+              
+        <label for="phone">Mobile No</label>
+        <input type="tel" placeholder="Mobile number" id="phone" required>
+ <br><br>
+        <label for="mail">Email</label>
+        <input type="email" placeholder="Email ID" id="email" required>
+ <br><br>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="pass" required>
+ <br><br>
+           <label for="password">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" id="pass" required>
+ <br><br>
+        <button><a href="login.html">Register</a></button>
+    </form>
+
+
+    <script>
+       document.getElementById('registerForm').addEventListener('submit', function (e){
+              e.preventDefault();
+
+       const name = document.getElementById('name').value;
+       const phone = document.getElementById('phone').value;
+       const email = document.getElementById('email').value;
+       const password = document.getElementById('pass').value;
+
+       let users = JSON.parse(localStorage.getItem('users')) || [];
+
+       if(users.some(user => user.email === email)){
+              alert("The email is already registered");
+              return;
+       }
+
+
+      // Create user object and push to array
+            const newUser = { name, phone, email, password };
+            users.push(newUser);
+
+            // Save updated array to local storage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Auto-login the new user and redirect to Project World
+            localStorage.setItem('activeUser', JSON.stringify(newUser));
+            alert("Registration successful!");
+            window.location.href = "project.html";
+        });
+
+  </script>
+</body>
+</html>

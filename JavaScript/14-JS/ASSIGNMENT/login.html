@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+         <div>
+    <h1>Login Form</h1>
+
+    <form id="loginForm">
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email" required>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password"  placeholder="Password" id="password" required>
+        <br><br>
+
+
+        <button> <a href="project.html">Login</a></button>
+    </form>
+    <p id="message"></p>
+    <p><a href="welcome.html">Back to Home</a></p>    
+</div>
+</div>
+        <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page reload
+
+            const emailInput = document.getElementById('email').value;
+            const passwordInput = document.getElementById('password').value;
+            const messageBox = document.getElementById('message');
+
+            // Retrieve users from local storage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Find if email exists in database
+            let foundUser = users.find(user => user.email === emailInput);
+
+            if (!foundUser) {
+                // Email is not found in the array at all
+                messageBox.innerHTML = "Wrong email address. Both might be wrong or missing. <a href='register.html'>Please register here.</a>";
+            } else if (foundUser.password !== passwordInput) {
+                // Email matches, but password does not
+                messageBox.innerText = "Wrong password. Please try again.";
+            } else {
+                // Both match successfully
+                messageBox.style.color = "green";
+                messageBox.innerText = "Login Successful! Redirecting...";
+
+                // Store active session and redirect
+                localStorage.setItem('activeUser', JSON.stringify(foundUser));
+                setTimeout(() => {
+                    window.location.href = "project.html";
+                }, 1000);
+            }
+        });
+   
+    </script>
+</body>
+</html>

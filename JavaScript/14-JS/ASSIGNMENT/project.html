@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            border: 1px solid blue;
+            
+        } */
+        .a , .b , .c, .d{
+            display: flex;
+            margin-bottom: 8px;
+            border: 2px solid;
+            width: 800px;
+            height: 250px;
+            border-radius: 12px;
+            margin-left: 25px;
+        }
+       
+        .ab{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40px;
+            margin-top: 60px;
+            
+        }
+
+        .bc,.cd , .de{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin-left: 40px;
+             margin-top: 60px;
+        }
+        button{
+    
+            margin-left: 20px;
+            height: 50px;
+            width: 100px;
+            border-radius: 5px;
+            
+        }
+        button:hover{
+            background-color: rgb(3, 3, 43);
+            color: white;
+        }
+        img{
+            margin: 20px 0px  0px 15px;
+            border-radius: 8px;
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>PROJECT WORLD </h1>
+<div class="container">
+    <div class="a">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWPDf_LR8dKCPPAewlX0JXGjtffTbSiGI9BL-kA5Zrkg&s=10" alt="" style="height: 200px; width: 300px;">
+        <div class="ab">
+            <p>Name of the Project : TO DO LIST</p>
+           <a href="/JavaScript/11-JS/TodoApp/index.html"><button>LIVE NOW</button></a>
+        </div>
+   </div>
+   <div class="b">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvVfNpfig3C-UmeyVLq-GxbLvG349sDAJcROvEKHG60w&s=10" alt="" style="height: 200px; width: 300px;">
+        <div class="bc">
+            <p>Name of the Project : COUNTER</p>
+           <a href="/JavaScript/11-JS/Counter/index.html"><button>LIVE NOW</button></a>
+        </div>
+    </div>
+
+    <div class="c">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSraUG7G6nq7tskrN-4sWow8rpvkBWnQbETSyzZegHdgQ&s=10" alt="" style="height: 200px; width: 300px;"">
+        <div class="cd">
+            <p>Name of the Project : BMI CALCULATOR</p>
+            <a href="/JavaScript/11-JS/BmiCalculator/index.html"><button>LIVE NOW</button></a>
+        </div>
+  </div>
+
+  <div class="d">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn0bLRKtENfVnuwZpmDL9HQsl76cMMpJjkLItHcYuIkw&s=10" alt="" style="height: 200px; width: 300px;"">
+        <div class="de">
+            <p>Name of the Project : BACKGROUND CHANGER</p>
+            <a href="/JavaScript//12-JS/BackgroundChanger/index.html"><button>LIVE NOW</button></a>
+       
+    </div>
+   </div>
+   </div>
+
+
+   <script>
+    const activeUser = JSON.parse(localStorage.getItem('activeUser'));
+    if(!activeUser){
+        window.location.href = "welcome.html";
+    }else{
+
+    }
+
+    function logout (){
+        localStorage.removeItem('activeUser');
+        window.location.href = "welcome.html";
+    }
+   </script>
+</body>
+</html>
