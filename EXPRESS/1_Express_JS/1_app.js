@@ -10,7 +10,7 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'Public')))
 
 app.get("/",(req, res)=>{
-    res.send("Welcome to Express");
+    res.send("Welcome to Express..");
 });
 
 

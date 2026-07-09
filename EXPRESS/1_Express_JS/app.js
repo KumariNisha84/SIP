@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // 1 params
 
 app.get("/student:name",(req,res)=>{
-    res.send(`Hello this side ${req.params.name} student of SAGE University.`)
+    res.send(`Hello this side ${req.params.name} student of SAGE UNIVERSITY.`)
 })
 
 
