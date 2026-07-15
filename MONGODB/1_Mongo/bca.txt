@@ -1,0 +1,23 @@
+[
+    {
+    name:"Shivang Kumar",
+    scholar:31393,
+    sem:5
+},
+
+ {
+    name:"Khushboo",
+    scholar:32356,
+    sem:5
+},
+ {
+    name:"Sammy",
+    scholar:31567,
+    sem:5
+},
+ {
+    name:"Jayant",
+    scholar:35674,
+    sem:5
+},
+]
