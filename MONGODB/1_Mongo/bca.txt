@@ -7,7 +7,7 @@
 
  {
     name:"Khushboo",
-    scholar:32356,
+    scholar:32357,
     sem:5
 },
  {
