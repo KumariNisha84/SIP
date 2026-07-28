@@ -13,8 +13,8 @@ const App = () => {
   return (
     <div>
       Hello cnt: {x}
-      {/* <button onClick={cntHandler}>update</button> */}
-      <button onClick={() => setX(x+1)}>update</button>
+      {/* <button onClick={cntHandler}>increase</button> */}
+      <button onClick={() => setX(x+1)}>Increase</button>
 
     </div>
   )
